@@ -1,0 +1,10 @@
+Parabola Hackers
+================
+
+* Add your key to the authorized_keys file.
+* Change the key comment to the "Name <name@email.nu>" format (just for keeping
+  it tidy)
+* Commit
+* Push if you have push privileges and you're adding a new hacker, or
+* Run `git format-patch HEAD-1` and send the generated patches to Parabola
+
