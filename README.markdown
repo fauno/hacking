@@ -20,3 +20,8 @@ privileges for the git user.
 
 'git' is an unprivileged user. If you know how to skip this and gain access to
 our servers be kind and let us now ;)
+
+## Why?
+
+Gitosis broke once and was never fixed. We didn't need gitosis' granular
+permissions anyway. Now Parabola hackers can add new hackers!
