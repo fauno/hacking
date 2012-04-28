@@ -3,7 +3,7 @@ Parabola Hackers
 
 ## How to add new keys
 
-* Add your key to the authorized_keys file.
+* Add your key to the authorized\_keys file.
 * Change the key comment to the "Name <name@email.nu>" format (just for keeping
   it tidy)
 * Commit
@@ -16,7 +16,7 @@ There's a post-receive hook on the origin hackers.git repository that updates
 a clone on ~/.ssh. Any change pushed to it is immediately reflected in access
 privileges for the git user.
 
-## Is this unsecure?
+## Is this insecure?
 
 'git' is an unprivileged user. If you know how to skip this and gain access to
 our servers be kind and let us now ;)
