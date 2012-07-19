@@ -12,7 +12,7 @@ uninstall:
 
 dist:
 	mkdir -pv parabola-keyring-$(V)/
-	cp -v Makefile parabola.gpg parabola-revoked parabola-keyring-$(V)/
+	cp -v Makefile parabola.gpg parabola-revoked parabola-trusted parabola-keyring-$(V)/
 	bsdtar czf parabola-keyring-$(V).tar.gz parabola-keyring-$(V)/
 	gpg --detach-sign --use-agent parabola-keyring-$(V).tar.gz
 	rm -rv parabola-keyring-$(V)/
