@@ -4,10 +4,10 @@ PREFIX = /usr/local
 
 install:
 	install -dm755 $(DESTDIR)$(PREFIX)/share/pacman/keyrings/
-	install -m0644 parabola{.gpg,-revoked} $(DESTDIR)$(PREFIX)/share/pacman/keyrings/
+	install -m0644 parabola{.gpg,-trusted,-revoked} $(DESTDIR)$(PREFIX)/share/pacman/keyrings/
 
 uninstall:
-	rm -f $(DESTDIR)$(PREFIX)/share/pacman/keyrings/parabola{.gpg,-revoked}
+	rm -f $(DESTDIR)$(PREFIX)/share/pacman/keyrings/parabola{.gpg,-trusted,-revoked}
 	rmdir -p --ignore-fail-on-non-empty $(DESTDIR)$(PREFIX)/share/pacman/keyrings/
 
 dist:

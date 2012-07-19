@@ -35,6 +35,7 @@ while read -ra data; do
 	exec 4>"${FD}"
 	${GPG} --yes --lsign-key ${keyid} &>/dev/null
 	${GPG} --armor --output packager/${username}.asc --export ${keyid}
+	echo "${keyid}:4:" >> parabola-trusted
 done < packager-keyids
 
 cat packager/*.asc > parabola.gpg
