@@ -22,7 +22,7 @@ Expire-Date: 0
 %echo Done
 EOF
 
-rm -rf packager
+rm -rf packager parabola-trusted
 mkdir packager
 
 while read -ra data; do
