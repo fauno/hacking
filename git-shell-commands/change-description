@@ -1,0 +1,12 @@
+#!/bin/sh
+# Allows users to change project description
+# $ ssh git@host change-description repo "description"
+
+set -E
+
+repo=$1; shift
+description="$@"
+
+echo "${repo}.git/${description}" > description
+
+exit $?
