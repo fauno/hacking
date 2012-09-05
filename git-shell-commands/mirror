@@ -4,8 +4,8 @@
 
 set -E
 
-repo="`basename "$1"`.git"
-
-git clone --mirror $1 $repo
+for _m in $@; do
+    git clone --mirror $_m
+done
 
 exit $?
