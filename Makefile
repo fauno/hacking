@@ -1,11 +1,11 @@
 PREFIX=/srv/git
 USER=git
-SHELL=/usr/bin/git-shell
+GIT_SHELL=/usr/bin/git-shell
 HACKERS=$(PWD)
 
 # Create the user
 user: 
-	useradd -d $(PREFIX) -m -r -s $(SHELL) -U 
+	useradd -d $(PREFIX) -m -r -s $(GIT_SHELL) -U $(USER)
 
 install: user
 	pushd $(PREFIX)
