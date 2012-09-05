@@ -8,7 +8,7 @@
 set -E
 
 # the ssh dir
-ssh_dir=/srv/git/.ssh
+ssh_dir=${HOME}/.ssh
 
 # pull this repo 
 git --git-dir ${ssh_dir}/.git \
