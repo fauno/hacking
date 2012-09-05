@@ -1,0 +1,16 @@
+#!/bin/sh
+# Allows users to create repo.git
+# $ ssh git@host create-bare-repo repo1 repo2 ...
+
+set -E
+
+for i in $@; do
+# Cleanup names
+    i="`echo "$i" | sed "s/[^a-z0-9\.\-\_]//gi"`"
+
+    if [ -z "$i" ]; then continue; fi
+
+    mkdir "$i".git
+    pushd "$i".git
+    git init --bare
+done

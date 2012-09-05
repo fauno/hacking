@@ -1,0 +1,22 @@
+#!/bin/bash
+# post-receive hook, updates /srv/git/.ssh after pushing to this repo
+# install:
+# git clone hackers.git .ssh
+# cp .ssh/git-hooks/post-receive hackers.git/hooks/
+
+# fail on any error
+set -E
+
+# the ssh dir
+ssh_dir=/srv/git/.ssh
+
+# pull this repo 
+git --git-dir ${ssh_dir}/.git \
+    --work-tree ${ssh_dir} \
+    pull origin master
+
+# secure the files
+chmod 600 ${ssh_dir}/authorized_keys
+chmod 700 ${ssh_dir}
+
+exit $?
