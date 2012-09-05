@@ -1,5 +1,22 @@
-Parabola Hackers
-================
+Hackers
+=======
+
+## What's this? Why?
+
+Hackers is a simple git repository management tool. I started this for Parabola
+GNU/Linux-libre when our gitosis broke and was never fixed. We didn't need
+gitosis' granular permissions anyway.
+
+Hackers.git allows for decentralized management, since any hacker added can add
+new keys, own and others'.
+
+It uses the git-shell to allow users to do git repository tasks (create a repo,
+mirror one, etc.) using ssh to connect to the repository server.
+
+## Install
+
+Run `make PREFIX=/srv/git install` as root, where *PREFIX* is the git root.
+Check the Makefile itself to see other options.
 
 ## How to add new keys
 
@@ -20,8 +37,3 @@ privileges for the git user.
 
 'git' is an unprivileged user. If you know how to skip this and gain access to
 our servers be kind and let us now ;)
-
-## Why?
-
-Gitosis broke once and was never fixed. We didn't need gitosis' granular
-permissions anyway. Now Parabola hackers can add new hackers!
