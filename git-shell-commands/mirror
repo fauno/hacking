@@ -1,0 +1,11 @@
+#!/bin/sh
+# Mirrors a repository
+# ssh git@host mirror git://url/repo.git
+
+set -E
+
+repo="`basename "$1"`.git"
+
+git clone --mirror $1 $repo
+
+exit $?
