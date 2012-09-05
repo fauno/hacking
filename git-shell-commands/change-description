@@ -5,8 +5,7 @@
 set -E
 
 repo=$1; shift
-description="$@"
 
-echo "${repo}.git/${description}" > description
+echo "${@}" > ${repo}.git/description
 
 exit $?
