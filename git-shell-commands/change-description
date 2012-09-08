@@ -1,6 +1,7 @@
 #!/bin/sh
-# Allows users to change project description
-# $ ssh git@host change-description repo "description"
+# * change-description
+#   Allows users to change project description
+#   ssh git@host change-description repo "description"
 
 set -e
 

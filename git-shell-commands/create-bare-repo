@@ -1,6 +1,7 @@
 #!/bin/sh
-# Allows users to create repo.git
-# $ ssh git@host create-bare-repo repo1 repo2 ...
+# * create-bare-repo
+#   Allows users to create repo.git
+#   ssh git@host create-bare-repo repo1 repo2 ...
 
 set -e
 

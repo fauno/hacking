@@ -1,0 +1,12 @@
+#!/bin/sh
+# * help
+#   Gets available commands
+#   ssh git@host help
+
+set -e
+
+# Gets three lines from every git-shell-command
+for c in `dirname $0`/*; do
+    head -q -n4 $c | tail -n3 | sed "s/^..//"
+    echo
+done
