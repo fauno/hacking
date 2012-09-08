@@ -2,7 +2,7 @@
 # Allows users to change project description
 # $ ssh git@host change-description repo "description"
 
-set -E
+set -e
 
 repo=$1; shift
 
