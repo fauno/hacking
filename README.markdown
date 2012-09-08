@@ -15,17 +15,37 @@ mirror one, etc.) using ssh to connect to the repository server.
 
 ## Install
 
-Run `make PREFIX=/srv/git install` as root, where *PREFIX* is the git root.
-Check the Makefile itself to see other options.
+Run `make PREFIX=/srv/git` as root, where *PREFIX* is the git root. Check the
+Makefile itself to see other options.
+
+Now you can use `ssh git@host command arguments`, run the *help* command to
+list commands and arguments available.
+
+## Host requirements
+
+You'll need `git-shell`, on Parabola it's on the *git* package. Also a working
+ssh daemon with "AuthorizedKeysFile  .ssh/authorized_keys" (default in most
+installations).
+
+## Local configuration
+
+On your hacking user, you can add this to your *~/.ssh/config*
+
+    Host git
+      HostName git_hostname_can_be_localhost
+      User git
+
+The repo URL will be *git:repo.git* or *ssh://gitPREFIX/repo.git*.
 
 ## How to add new keys
 
-* Add your key to the authorized\_keys file.
+* Add your key to the authorized\_keys file on your local clone
 * Change the key comment to the "Name <name@email.nu>" format (just for keeping
   it tidy)
 * Commit
 * Push if you have push privileges and you're adding a new hacker, or
-* Run `git format-patch HEAD-1` and send the generated patches to Parabola
+* Run `git format-patch HEAD-1` and send the generated patches to one of the
+  other hackers listed.
 
 ## How does this work?
 
@@ -35,5 +55,5 @@ privileges for the git user.
 
 ## Is this insecure?
 
-'git' is an unprivileged user. If you know how to skip this and gain access to
+*git* is an unprivileged user. If you know how to skip this and gain access to
 our servers be kind and let us now ;)
