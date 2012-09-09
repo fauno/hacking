@@ -5,7 +5,7 @@
 # cp .ssh/git-hooks/post-receive hackers.git/hooks/
 
 # fail on any error
-set -E
+set -e
 
 # the ssh dir
 ssh_dir=${HOME}/.ssh
@@ -15,7 +15,7 @@ git --git-dir ${ssh_dir}/.git \
     --work-tree ${ssh_dir} \
     pull origin master
 
-# secure the files
+# secure the files (sshd will refuse connections otherwise)
 chmod 600 ${ssh_dir}/authorized_keys
 chmod 700 ${ssh_dir}
 
