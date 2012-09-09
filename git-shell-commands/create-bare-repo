@@ -7,7 +7,7 @@ set -e
 
 for i in $@; do
 # Cleanup names
-    repo="`echo "$i" | sed "s/[^a-z0-9\.\-\_]//gi"`"
+    repo="`echo "$i" | sed "s/[^a-z0-9\._-]//gi"`"
 
     if [ -z "$repo" ]; then continue; fi
 
