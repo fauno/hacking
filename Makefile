@@ -26,4 +26,5 @@ install:
 	chmod 700 .ssh && \
 	chmod 600 .ssh/authorized_keys && \
 	ln -s $(PREFIX)/.ssh/git-hooks/* hackers.git/hooks/ && \
-	ln -s $(PREFIX)/.ssh/git-shell-commands 
+	ln -s $(PREFIX)/.ssh/git-shell-commands && \
+    chown -R $(USER):$(USER) $(PREFIX)
