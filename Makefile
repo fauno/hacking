@@ -5,7 +5,7 @@ USER=git
 # The git-shell path
 GIT_SHELL=/usr/bin/git-shell
 # The hacking.git clone
-HACKERS=$(PWD)
+HACKERS=$(shell pwd)
 
 # Create the user
 user: 
