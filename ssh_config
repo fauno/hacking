@@ -1,0 +1,6 @@
+
+# ssh shortcut for git@localhost
+Host git
+  HostName localhost
+  User git
+# Port 22 # change to your ssh port

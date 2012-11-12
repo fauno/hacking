@@ -30,6 +30,11 @@ check:
 		exit 1 ;\
 	fi 
 
+# Add the hackers repo to the local clone
+install-local:
+	git remote add git git:hackers.git
+	cat ssh_config >>$(HOME)/.ssh/config
+
 # Create the hackers.git bare repo and clone as .ssh 
 # Then create needed symlinks and add hooks to hackers.git
 install: check
@@ -41,4 +46,4 @@ install: check
 	chmod 600 .ssh/authorized_keys && \
 	ln -s $(PREFIX)/.ssh/git-hooks/* hackers.git/hooks/ && \
 	ln -s $(PREFIX)/.ssh/git-shell-commands && \
-    chown -R $(USER):$(USER) $(PREFIX)
+	chown -R $(USER):$(USER) $(PREFIX)
