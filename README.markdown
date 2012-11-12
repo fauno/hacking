@@ -15,6 +15,12 @@ mirror one, etc.) using ssh to connect to the repository server.
 
 ## Install
 
+Clone hackers.git somewhere and add yours and other people's SSH pubkeys (at
+least yours) to the authorized\_keys file, then commit.
+
+This step can be done in a single step with `make bootstrap` (or let the next
+step do it). If you don't you won't be able to login later!
+
 Run `make PREFIX=/srv/git` as root, where *PREFIX* is the git root. Check the
 Makefile itself to see other options.
 
