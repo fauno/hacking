@@ -6,7 +6,7 @@
 set -e
 
 # Find all mirrors
-mirrors | \
+~/git-shell-commands/mirrors | \
   while read _mirror; do
 
     pushd "$_mirror" >/dev/null
