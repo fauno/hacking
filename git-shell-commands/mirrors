@@ -1,0 +1,11 @@
+#!/bin/sh
+# * mirrors
+#   Prints all mirrored repos
+#   ssh git@host mirrors
+
+set -e
+
+# Find all mirrors
+find *.git -maxdepth 1 -iname config -print0 | \
+  xargs -0 grep -l 'mirror = true' | \
+  sed 's,/config$,,'

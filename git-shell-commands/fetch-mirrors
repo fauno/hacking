@@ -1,0 +1,20 @@
+#!/bin/sh
+# * fetch-mirrors
+#   Updates mirrors created with `mirror`
+#   ssh git@host fetch-mirrors
+
+set -e
+
+# Find all mirrors
+mirrors | \
+  while read _mirror; do
+
+    pushd "$_mirror" >/dev/null
+
+    git fetch
+
+    popd >dev/null
+
+done
+
+exit $?
