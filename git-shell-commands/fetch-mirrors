@@ -11,7 +11,7 @@ set -e
 
     pushd "$_mirror" >/dev/null
 
-    git fetch
+    git remote update
 
     popd >/dev/null
 
