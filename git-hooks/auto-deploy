@@ -1,0 +1,16 @@
+#!/bin/bash
+# auto-deploy
+# Usage: auto-deploy /srv/http/repo
+
+# fail on any error
+set -e
+
+# Can we write on the clone?
+test -w "${1}/.git/HEAD"
+
+# pull this repo 
+git --git-dir "${1}/.git" \
+    --work-tree "${1}" \
+    pull origin master
+
+exit $?

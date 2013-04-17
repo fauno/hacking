@@ -1,0 +1,12 @@
+#!/bin/sh
+# Generic hook, installs itself as a valid githook(5) and runs whatever it
+# finds on hacking.hook.$self
+# Format:
+# hacking.hooks.post-receive.auto-deploy /srv/http/markpower.hackcoop.com.ar
+
+git config --local --get-regexp "hacking.hooks.${0}.*" | \
+while read hook repo; do
+  hook="`echo "${hook}" | cut -d'.' -f4`"
+
+  ${HOME}/.ssh/git-hooks/${hook} ${repo} ${@} </dev/stdin
+done
