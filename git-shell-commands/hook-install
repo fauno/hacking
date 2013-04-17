@@ -1,6 +1,6 @@
 #!/bin/sh
 # * hook-install
-#   Installs a hook on a repo
+#   Instala un hook en un repo
 #   ssh git@host hook-install hook script repo [alt-dir]
 
 set -e

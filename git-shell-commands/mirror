@@ -1,6 +1,6 @@
 #!/bin/sh
 # * mirror
-#   Mirrors a repository
+#   Espeja un repositorio
 #   ssh git@host mirror git://url/repo.git
 
 set -E

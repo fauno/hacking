@@ -1,6 +1,6 @@
 #!/bin/sh
 # * help
-#   Gets available commands
+#   Obtiene los comando habilitados
 #   ssh git@host help
 
 set -e
