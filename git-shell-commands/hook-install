@@ -13,7 +13,6 @@ clone="${4:-${repo}}"
 # Tests
 test -f "${repo}/HEAD"
 test -f "${clone}/.git/HEAD"
-test -f "${repo}/hooks/${hook_name}"
 
 # Installs the generic hook that runs scripts
 test -f "${repo}/hooks/${hook}" || \ 
