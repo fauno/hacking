@@ -15,10 +15,9 @@ test -f "${repo}/HEAD"
 test -f "${clone}/.git/HEAD"
 
 # Installs the generic hook that runs scripts
-test -f "${repo}/hooks/${hook}" || \ 
-  ln -s "${HOME}/.ssh/git-hooks/generic" "${repo}/hooks/${hook}"
+test -f "${repo}/hooks/${hook}" || ln -s "${HOME}/.ssh/git-hooks/generic" "${repo}/hooks/${hook}"
 
 # Install the hook on the repo
-git config --local --add "hacking.hooks.${hook}.${2}" "${clone}"
+git config -f "${repo}/config" --add "hacking.hooks.${hook}.${2}" "${clone}"
 
 exit $?
