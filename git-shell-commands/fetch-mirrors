@@ -1,6 +1,6 @@
 #!/bin/sh
 # * fetch-mirrors
-#   Updates mirrors created with `mirror`
+#   Actualiza el `mirrors` (espejos) creados con `mirror`
 #   ssh git@host fetch-mirrors
 
 set -e

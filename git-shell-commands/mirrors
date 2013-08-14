@@ -1,6 +1,6 @@
 #!/bin/sh
 # * mirrors
-#   Prints all mirrored repos
+#   Muestra todos los repositorios espejos (mirror)
 #   ssh git@host mirrors
 
 set -e
