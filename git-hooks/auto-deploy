@@ -8,9 +8,9 @@ set -e
 # Can we write on the clone?
 test -w "${1}/.git/HEAD"
 
-# pull this repo 
-git --git-dir "${1}/.git" \
-    --work-tree "${1}" \
-    pull origin master
+alias git="git --git-dir '${1}/.git' --work-tree '${1}'"
+
+# pull this repo on the current branch
+git pull origin $(git rev-parse --abbrev-ref HEAD)
 
 exit $?
