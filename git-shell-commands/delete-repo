@@ -5,7 +5,7 @@
 
 set -e
 
-for i in $@; do
+for repo in $@; do
     if [ -z "$repo" ]; then continue; fi
 
     # lo and behold absolute horror
