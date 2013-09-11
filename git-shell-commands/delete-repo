@@ -1,0 +1,13 @@
+#!/bin/sh
+# * delete-repo
+#   Allows users to delete repositories permanently
+#   ssh git@host delete-repo repo1 repo2 ...
+
+set -e
+
+for i in $@; do
+    if [ -z "$repo" ]; then continue; fi
+
+    # lo and behold absolute horror
+    rm -rf "$repo".git
+done
