@@ -1,0 +1,16 @@
+#!/bin/sh
+# * delete-repo
+#   Allows users to delete repositories permanently
+#   ssh git@host delete-repo repo1 repo2 ...
+
+set -e
+
+for repo in $@; do
+# Remove leading slashes and dots and perform cleanup
+    repo="`echo "$repo" | sed -e "s,^[/\.]\+,,g" -e "s,[^a-z0-9\./_-],,gi"`"
+    test ! -d "$repo".git && continue
+
+    echo "Removing ${repo}.git"
+    # lo and behold absolute horror
+    rm -rf "$repo".git
+done

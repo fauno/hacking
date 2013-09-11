@@ -7,6 +7,6 @@ set -e
 
 repo=$1; shift
 
-echo "${@}" > ${repo}.git/description
+test -d ${repo}.git && echo "${@}" > ${repo}.git/description
 
 exit $?
