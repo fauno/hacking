@@ -1,0 +1,12 @@
+#!/bin/sh
+# * change-owner
+#   Define quién manda
+#   ssh git@host change-owner repo "Hacklab"
+
+set -e
+
+repo=$1; shift
+
+git config -f "${repo}/config" "gitweb.owner" "${@}"
+
+exit $?
