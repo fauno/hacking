@@ -6,7 +6,7 @@
 set -e
 
 for repo in $@; do
-    test ! -d "$repo" && continue
+    test ! -d "$repo".git && continue
 
     # lo and behold absolute horror
     rm -rf "$repo".git
