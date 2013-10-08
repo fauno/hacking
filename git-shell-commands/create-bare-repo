@@ -6,8 +6,8 @@
 set -e
 
 for repo in $@; do
-# Cleanup names
-    repo="`echo "$repo" | sed -e "s,^[/\.]\+,,g" -e "s,[^a-z0-9\./_-],,gi"`"
+# Cleanup names, allow hidden repos
+    repo="`echo "$repo" | sed -e "s/\.\.//g" -e "s,^/\+,,g" -e "s,[^a-z0-9\./_-],,gi"`"
     test -d "$repo".git && continue
 
     mkdir -p "$repo".git

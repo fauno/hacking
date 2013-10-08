@@ -7,7 +7,7 @@ set -e
 
 for repo in $@; do
 # Remove leading slashes and dots and perform cleanup
-    repo="`echo "$repo" | sed -e "s,^[/\.]\+,,g" -e "s,[^a-z0-9\./_-],,gi"`"
+    repo="`echo "$repo" | sed -e "s/\.\.//g" -e "s,^/\+,,g" -e "s,[^a-z0-9\./_-],,gi"`"
     test ! -d "$repo".git && continue
 
     echo "Removing ${repo}.git"
